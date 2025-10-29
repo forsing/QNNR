@@ -550,6 +550,23 @@ print()
 500
 500
 === Predviđena sledeća loto kombinacija (5+2) ===
-15 21 25 27 19 22 24
+15 21 x x x 22 24
 """
+
+
+
+
+"""
+=== Qiskit Version Table ===
+Software                       Version        
+---------------------------------------------
+qiskit                         1.4.4          
+qiskit_machine_learning        0.8.3          
+
+=== System Information ===
+Python version                 3.11.13        
+OS                             Darwin         
+Time                           Tue Sep 09 18:11:49 2025 CEST
+"""
+
 
