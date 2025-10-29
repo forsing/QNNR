@@ -25,8 +25,14 @@ np.random.seed(SEED)
 random.seed(SEED)
 algorithm_globals.random_seed = SEED
 
+
+"""
+svih 4502 izvlacenja Loto 7/39 u Srbiji
+30.07.1985.- 28.10.2025.
+"""
+
 # 1. Učitaj loto podatke
-df = pd.read_csv("/data/loto7_4500_k84.csv", header=None)
+df = pd.read_csv("/data/loto7_4502_k85.csv", header=None)
 
 
 ###################################
@@ -54,12 +60,7 @@ print()
 """
 Zadnjih 5 ucitanih kombinacija iz CSV fajla:
 
-       0   1   2   3   4   5   6
-4479   8  10  20  21  30  32  34
-4480  13  15  16  22  25  33  36
-4481  11  16  27  31  33  34  39
-4482   3   8  12  21  34  37  39
-4483   1   4   5   6  18  20  28
+
 """
 ####################################
 
@@ -114,12 +115,7 @@ print()
 """
 Zadnjih 5 mapiranih kombinacija:
 
-       0   1   2   3   4   5   6
-4479   7   8  17  17  25  26  27
-4480  12  13  13  18  20  27  29
-4481  10  14  24  27  28  28  32
-4482   2   6   9  17  29  31  32
-4483   0   2   2   2  13  14  21
+
 """
 
 
