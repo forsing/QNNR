@@ -582,14 +582,25 @@ print()
 91
 91 
 === Predviđena sledeća loto kombinacija (5+1) ===
-6 7 3 11 11 1
+6 7 x x 11 1
 """
 
 
 
 
 
+"""
+=== Qiskit Version Table ===
+Software                       Version        
+---------------------------------------------
+qiskit                         1.4.4          
+qiskit_machine_learning        0.8.3          
 
+=== System Information ===
+Python version                 3.11.13        
+OS                             Darwin         
+Time                           Tue Sep 09 18:11:49 2025 CEST
+"""
 
 
 
