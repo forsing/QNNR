@@ -1,3 +1,5 @@
+# QNNR (Quantum Neural Network Regressor)
+
 import numpy as np
 import pandas as pd
 
@@ -24,7 +26,7 @@ random.seed(SEED)
 algorithm_globals.random_seed = SEED
 
 # 1. Učitaj loto podatke
-df = pd.read_csv("/Users/milan/Desktop/GHQ/data/loto5_91_k82.csv", header=None)
+df = pd.read_csv("/data/loto5_91_k82.csv", header=None)
 
 
 ###################################
@@ -192,7 +194,7 @@ def full_qcbm(params_list, values):
 
     return qc
 
-# Test primer: enkoduj kombinaciju [13, 5, 7, 20, 23, 8]
+
 test_values = [3,8,12,33,29,4]
 np.random.seed(35)
 params_list = [np.random.uniform(0, 2*np.pi, num_layers * num_qubits) for _ in range(num_positions)]
@@ -244,26 +246,26 @@ circuit_drawer(full_circuit, output='latex', style={"backgroundcolor": "#EEEEEE"
 """
 # Sačuvaj kao PDF
 img1 = full_circuit.draw('latex')
-img1.save("/Users/milan/Desktop/GHQ/data/qc30_5_1.pdf")
+img1.save("/data/qc30_5_1.pdf")
 
 
 # Sačuvaj kao sliku u latex formatu jpg
 img2 = full_circuit.draw('latex')
-img2.save("/Users/milan/Desktop/GHQ/data/qc30_5_2.jpg")
+img2.save("/data/qc30_5_2.jpg")
 
 
 # Sačuvaj kao sliku u latex formatu png
 img3 = full_circuit.draw('latex')
-img3.save("/Users/milan/Desktop/GHQ/data/qc30_5_3.png")
+img3.save("/data/qc30_5_3.png")
 
 
 # Sačuvaj kao sliku u matplotlib formatu jpg
 img4 = full_circuit.draw('mpl', fold=40)
-img4.savefig("/Users/milan/Desktop/GHQ/data/qc30_5_4.jpg")
+img4.savefig("/data/qc30_5_4.jpg")
 
 # Sačuvaj kao sliku u matplotlib formatu png
 img5 = full_circuit.draw('mpl', fold=40)
-img5.savefig("/Users/milan/Desktop/GHQ/data/qc30_5_5.png")
+img5.savefig("/data/qc30_5_5.png")
 """
 
 
@@ -271,7 +273,7 @@ img5.savefig("/Users/milan/Desktop/GHQ/data/qc30_5_5.png")
 
 # Sačuvaj kao sliku u matplotlib formatu jpg
 img4 = full_circuit.draw('mpl', fold=40)
-img4.savefig("/Users/milan/Desktop/GHQ/KvantniRegresor/2QNNR/QNNR_Samp_qc25_5_4.jpg")
+img4.savefig("/KvantniRegresor/2QNNR/QNNR_Samp_qc25_5_4.jpg")
 
 
 
@@ -318,7 +320,7 @@ from qiskit.circuit import ParameterVector
 
 
 # =========================
-# 2. Koristimo samo zadnjih N=1000 za test
+# 2. Koristimo svih 91 izvlacenja
 # =========================
 N = 91
 df = df.tail(N).reset_index(drop=True)
@@ -546,13 +548,4 @@ print()
 === Predviđena sledeća loto kombinacija (5+1) ===
 10 19 20 23 18 7
 """
-
-
-
-
-
-
-
-
-
 
