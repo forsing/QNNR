@@ -584,7 +584,7 @@ print()
 4500
 4500
 === Predviđena sledeća loto kombinacija (5+2) ===
-2 10 12 11 22 24 20
+2 10 x x x 24 20
 
 
 
@@ -595,5 +595,21 @@ print()
 2166/4500 [9:11:18<9:54:03, 15.27s/it
 
 """
+
+
+
+"""
+=== Qiskit Version Table ===
+Software                       Version        
+---------------------------------------------
+qiskit                         1.4.4          
+qiskit_machine_learning        0.8.3          
+
+=== System Information ===
+Python version                 3.11.13        
+OS                             Darwin         
+Time                           Tue Sep 09 18:11:49 2025 CEST
+"""
+
 
 
