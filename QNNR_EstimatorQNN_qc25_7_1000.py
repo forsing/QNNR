@@ -354,7 +354,7 @@ df = df.tail(N).reset_index(drop=True)
 
 
 X = df.iloc[:, :-1].values  # prvih 5 brojeva
-y_full = df.values          # svi 6 brojeva (5+1)
+y_full = df.values          # svi 7 brojeva (5+2)
 
 # Skaliranje
 scaler_X = MinMaxScaler()
@@ -484,14 +484,7 @@ for i in range(7):  # 5 brojeva + 2 dodatna broja
     )
 
 
-
-
-
-
-
-    
     optimizer = COBYLA(maxiter=len(X_scaled))
-
 
 
     # priprema target distribucije
@@ -548,8 +541,8 @@ print("\n=== Predviđena sledeća loto kombinacija (5+2) ===")
 print(" ".join(str(num) for num in predicted_combination))
 print()
 """
-4500
-4500
+1000
+1000
 === Predviđena sledeća loto kombinacija (5+2) ===
 2 10 x x x 24 20
 
