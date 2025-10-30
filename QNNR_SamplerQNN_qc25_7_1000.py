@@ -39,12 +39,12 @@ df = pd.read_csv("/data/loto7_4502_k85.csv", header=None)
 
 ###################################
 print()
-print("Prvih 7 ucitanih kombinacija iz CSV fajla:")
+print("Prvih 5 ucitanih kombinacija iz CSV fajla:")
 print()
 print(df.head())
 print()
 """
-Prvih 7 ucitanih kombinacija iz CSV fajla:
+Prvih 5 ucitanih kombinacija iz CSV fajla:
 
     0   1   2   3   4   5   6
 0   5  14  15  17  28  30  34
@@ -55,12 +55,12 @@ Prvih 7 ucitanih kombinacija iz CSV fajla:
 """
 
 print()
-print("Zadnjih 7 ucitanih kombinacija iz CSV fajla:")
+print("Zadnjih 5 ucitanih kombinacija iz CSV fajla:")
 print()
 print(df.tail())
 print()
 """
-Zadnjih 7 ucitanih kombinacija iz CSV fajla:
+Zadnjih 5 ucitanih kombinacija iz CSV fajla:
 
 """
 ####################################
@@ -88,7 +88,7 @@ print()
 print(f"Učitano kombinacija: {df.shape[0]}, Broj pozicija: {df.shape[1]}")
 print()
 """
-Učitano kombinacija: 4484, Broj pozicija: 7
+Učitano kombinacija: 4502, Broj pozicija: 7
 """
 
 
@@ -234,37 +234,31 @@ circuit_drawer(full_circuit, output='latex', style={"backgroundcolor": "#EEEEEE"
 # plt.show()
 
 
-# import tinytex
-# pip install tinycio
-# pip install torchvision
-# tinytex.install()
-
-
 
 """
 # Sačuvaj kao PDF
 img1 = full_circuit.draw('latex')
-img1.save("/data/qc30_5_1.pdf")
+img1.save("/data/qc25_5_1.pdf")
 
 
 # Sačuvaj kao sliku u latex formatu jpg
 img2 = full_circuit.draw('latex')
-img2.save("/data/qc30_5_2.jpg")
+img2.save("/data/qc25_5_2.jpg")
 
 
 # Sačuvaj kao sliku u latex formatu png
 img3 = full_circuit.draw('latex')
-img3.save("/data/qc30_5_3.png")
+img3.save("/data/qc25_5_3.png")
 
 
 # Sačuvaj kao sliku u matplotlib formatu jpg
 img4 = full_circuit.draw('mpl', fold=40)
-img4.savefig("/data/qc30_5_4.jpg")
+img4.savefig("/data/qc25_5_4.jpg")
 
 # Sačuvaj kao sliku u matplotlib formatu png
 img5 = full_circuit.draw('mpl', fold=40)
-img5.savefig("/data/qc30_5_5.png")
-"""
+img5.savefig("/data/qc25_5_5.png")
+
 
 
 
@@ -272,7 +266,7 @@ img5.savefig("/data/qc30_5_5.png")
 # Sačuvaj kao sliku u matplotlib formatu jpg
 img4 = full_circuit.draw('mpl', fold=40)
 img4.savefig("/KvantniRegresor/2QNNR/QNNR_Samp_qc25_7_4.jpg")
-
+"""
 
 
 ###############################################
@@ -328,7 +322,7 @@ df = df.tail(N).reset_index(drop=True)
 
 
 X = df.iloc[:, :-1].values  # prvih 6 brojeva
-y_full = df.values          # svi 7 brojeva (5+1)
+y_full = df.values          # svi 7 brojeva (6+1)
 
 # Skaliranje
 scaler_X = MinMaxScaler()
@@ -339,7 +333,7 @@ print(X_scaled.shape[0])
 print()
 """
 X_scaled.shape[0]
-4484
+4502
 """
 
 print()
@@ -348,7 +342,7 @@ print(len(X_scaled))
 print()
 """
 len(X_scaled)
-4484
+4502
 """
 
 
@@ -406,18 +400,6 @@ for i in range(7):  # 5 brojeva + 2 dodatna broja
 
 
 
-    # Example 2: Explicitly specifying the feature map and ansatz
-    # Create a feature map and an ansatz separately
-    # feature_map = ZZFeatureMap(feature_dimension=num_qubits)
-    # ansatz = RealAmplitudes(num_qubits=num_qubits)
-
-    # Compose the feature map and ansatz manually (otherwise done within QNNCircuit)
-    # qc = QuantumCircuit(num_qubits)
-    # full_circuit.compose(feature_map, inplace=True)
-    # full_circuit.compose(ansatz, inplace=True)
-
-    # Example 1: Using the QNNCircuit class
-    # QNNCircuit automatically combines a feature map and an ansatz into a single circuit
     
     sampler = Sampler()
 
@@ -462,13 +444,6 @@ for i in range(7):  # 5 brojeva + 2 dodatna broja
     # 3. Spoji ih u jedan parametarski krug
     full_circuit_map = feature_map.compose(ansatz)
 
-    # full_circuit.compose(ansatz.assign_parameters(theta), inplace=True)
-    # full_circuit.measure(range(num_qubits), range(num_qubits))  # merenja
-
-
-
-
-    # from qiskit_machine_learning.neural_networks import SamplerQNN, circuit_parity
     
     regression_sampler_qnn = SamplerQNN(
         sampler=sampler,
@@ -480,10 +455,7 @@ for i in range(7):  # 5 brojeva + 2 dodatna broja
         gradient=gradient
     )
 
-
-    # NeuralNetworkRegressor
-    
-    # optimizer = COBYLA(maxiter=100) 
+ 
 
     
     optimizer = COBYLA(maxiter=len(X_scaled))
@@ -544,8 +516,8 @@ print("\n=== Predviđena sledeća loto kombinacija (5+2) ===")
 print(" ".join(str(num) for num in predicted_combination))
 print()
 """
-500
-500
+1000
+1000
 === Predviđena sledeća loto kombinacija (5+2) ===
 15 21 x x x 22 24
 """
