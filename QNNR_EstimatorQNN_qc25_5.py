@@ -1,6 +1,14 @@
 # QNNR (Quantum Neural Network Regressor)
 # Regression with an EstimatorQNN
 
+
+"""
+Loto Skraceni Sistemi 
+https://www.lotoss.info
+ABBREVIATED LOTTO SYSTEMS
+"""
+
+
 import numpy as np
 import pandas as pd
 
