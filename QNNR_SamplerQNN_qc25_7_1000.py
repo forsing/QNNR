@@ -1,4 +1,6 @@
 # QNNR (Quantum Neural Network Regressor)
+# Regression with an SamplerQNN
+
 
 import numpy as np
 import pandas as pd
@@ -276,8 +278,9 @@ img4.savefig("/KvantniRegresor/2QNNR/QNNR_Samp_qc25_7_4.jpg")
 ###############################################
 
 
-
 # QNNR (Quantum Neural Network Regressor)
+# Regression with an SamplerQNN
+
 
 import pandas as pd
 import numpy as np
