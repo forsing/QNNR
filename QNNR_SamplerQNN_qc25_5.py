@@ -2,6 +2,12 @@
 # Regression with an SamplerQNN
 
 
+"""
+Loto Skraceni Sistemi 
+https://www.lotoss.info
+ABBREVIATED LOTTO SYSTEMS
+"""
+
 
 import numpy as np
 import pandas as pd
