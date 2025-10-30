@@ -89,7 +89,7 @@ print()
 print(f"Učitano kombinacija: {df.shape[0]}, Broj pozicija: {df.shape[1]}")
 print()
 """
-Učitano kombinacija: 4484, Broj pozicija: 7
+Učitano kombinacija: 4502, Broj pozicija: 7
 """
 
 
@@ -236,11 +236,6 @@ circuit_drawer(full_circuit, output='latex', style={"backgroundcolor": "#EEEEEE"
 # plt.show()
 
 
-# import tinytex
-# pip install tinycio
-# pip install torchvision
-# tinytex.install()
-
 
 
 """
@@ -266,7 +261,7 @@ img4.savefig("/data/qc30_5_4.jpg")
 # Sačuvaj kao sliku u matplotlib formatu png
 img5 = full_circuit.draw('mpl', fold=40)
 img5.savefig("/data/qc30_5_5.png")
-"""
+
 
 
 
@@ -275,7 +270,7 @@ img5.savefig("/data/qc30_5_5.png")
 img4 = full_circuit.draw('mpl', fold=40)
 img4.savefig("/KvantniRegresor/2QNNR/QNNR_Est_qc25_7_4.jpg")
 
-
+"""
 
 ###############################################
 
@@ -323,8 +318,6 @@ from qiskit.circuit import ParameterVector
 
 
 
-# QNNR (Quantum Neural Network Regressor)
-
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
@@ -353,7 +346,7 @@ import matplotlib.pyplot as plt
 # =========================
 # 2. Koristimo samo zadnjih N=1000 za test
 # =========================
-N = 1000  #4500
+N = 1000  #4502
 df = df.tail(N).reset_index(drop=True)
 
 
@@ -372,7 +365,7 @@ print(X_scaled.shape[0])
 print()
 """
 X_scaled.shape[0]
-4484
+4502
 """
 
 print()
@@ -381,7 +374,7 @@ print(len(X_scaled))
 print()
 """
 len(X_scaled)
-4484
+4502
 """
 
 
@@ -410,7 +403,7 @@ for i in range(7):  # 5 brojeva + 2 dodatna broja
     print()
     """
     y_scaled.shape[0]
-    4484
+    4502
     """
 
     print()
@@ -419,7 +412,7 @@ for i in range(7):  # 5 brojeva + 2 dodatna broja
     print()
     """
     len(y_scaled)
-    4484
+    4502
     """
 
     
@@ -439,19 +432,7 @@ for i in range(7):  # 5 brojeva + 2 dodatna broja
 
 
 
-    # Example 2: Explicitly specifying the feature map and ansatz
-    # Create a feature map and an ansatz separately
-    # feature_map = ZZFeatureMap(feature_dimension=num_qubits)
-    # ansatz = RealAmplitudes(num_qubits=num_qubits)
-
-    # Compose the feature map and ansatz manually (otherwise done within QNNCircuit)
-    # qc = QuantumCircuit(num_qubits)
-    # full_circuit.compose(feature_map, inplace=True)
-    # full_circuit.compose(ansatz, inplace=True)
-
-    # Example 1: Using the QNNCircuit class
-    # QNNCircuit automatically combines a feature map and an ansatz into a single circuit
-    
+   
     sampler = Sampler()
 
     
@@ -491,16 +472,9 @@ for i in range(7):  # 5 brojeva + 2 dodatna broja
 
     # 3. Spoji ih u jedan parametarski krug
     full_circuit_map = feature_map.compose(ansatz)
-    # full_circuit = feature_map.compose(feature_map)
-
-
     
 
-
-    # full_circuit.compose(ansatz.assign_parameters(theta), inplace=True)
-    # full_circuit.measure(range(num_qubits), range(num_qubits))  # merenja
-
-
+    
 
     regression_estimator_qnn = EstimatorQNN(
         circuit=full_circuit_map,
@@ -514,14 +488,6 @@ for i in range(7):  # 5 brojeva + 2 dodatna broja
 
 
 
-    # from qiskit_machine_learning.neural_networks import SamplerQNN, circuit_parity
-    
-    
-
-
-    # NeuralNetworkRegressor
-    
-    # optimizer = COBYLA(maxiter=100) 
 
     
     optimizer = COBYLA(maxiter=len(X_scaled))
