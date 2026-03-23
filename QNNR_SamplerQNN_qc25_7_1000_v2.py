@@ -99,7 +99,7 @@ from tqdm import tqdm
 warnings.filterwarnings("ignore", category=UserWarning)
 
 SEED = 39
-_DEFAULT_CSV = Path("/Users/4c/Desktop/GHQ/data/loto7hh_4584_k23.csv")
+_DEFAULT_CSV = Path("/data/loto7hh_4584_k23.csv")
 _DEFAULT_OUT = Path(__file__).resolve().parent / "QNNR_SamplerQNN_qc25_7_1000_v2_out"
 
 min_val = [1, 2, 3, 4, 5, 6, 7]
@@ -321,7 +321,7 @@ Broj 7:   0%|                         | 0/100 [00:58<?, ?it/s]
 Predikcija za broj 7: 31
 
 === Predviđena sledeća loto kombinacija (5+2) ===
-12 14 15 20 20 26 31
+12 x 15 y 20 z 31
 """
 
 
